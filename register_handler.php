@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         move_uploaded_file($_FILES['image']['tmp_name'], $img_path);
     }
 
-    // E-mail egyediség ellenőrzése
+    // E-mail egyediségének ellenőrzése
     $check = $conn->prepare("SELECT id FROM users WHERE email=?");
     $check->bind_param("s", $email);
     $check->execute();
